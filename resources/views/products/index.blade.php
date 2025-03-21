@@ -27,6 +27,7 @@
                                     <th scope="col">TITLE</th>
                                     <th scope="col">PRICE</th>
                                     <th scope="col">STOCK</th>
+                                    <th scope="col">CATEGORY</th>
                                     <th scope="col" style="width: 20%">ACTIONS</th>
                                 </tr>
                             </thead>
@@ -39,6 +40,7 @@
                                         <td>{{ $product->title }}</td>
                                         <td>{{ "Rp " . number_format($product->price,2,',','.') }}</td>
                                         <td>{{ $product->stock }}</td>
+                                        <td>{{ $product->category->name }}</td>
                                         <td class="text-center">
                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('products.destroy', $product->id) }}" method="POST">
                                                 <a href="{{ route('products.show', $product->id) }}" class="btn btn-sm btn-dark">SHOW</a>
