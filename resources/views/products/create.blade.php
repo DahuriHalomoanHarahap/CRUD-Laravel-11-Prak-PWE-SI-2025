@@ -94,6 +94,19 @@
                                         </div>
                                     @enderror
                                 </div>
+                                <div class="form-group mb-3">
+                                    <label class="font-weight-bold">SUPPLIER</label>
+                                    <select class="form-control @error('supplier_id') is-invalid @enderror" name="supplier_id">
+                                        @foreach($suppliers as $supplier)
+                                            <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('supplier_id')
+                                        <div class="alert alert-danger mt-2">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
                             </div>
 
                             <button type="submit" class="btn btn-md btn-primary me-3">SAVE</button>

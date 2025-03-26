@@ -19,6 +19,7 @@ return new class extends Migration
             $table->bigInteger('price');
             $table->integer('stock')->default(0);
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
+            $table->foreignId('supplier_id')->constrained('suppliers')->onDelete('cascade');
             $table->timestamps();
         });
     }
